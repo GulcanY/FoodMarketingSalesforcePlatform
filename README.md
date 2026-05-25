@@ -1,6 +1,6 @@
-# FoodMarketProject2026
+# FoodMarketingSalesforcePlatform
 ## Project Overview
-FoodMarketProject2026 is a Salesforce-based food marketplace application designed to connect home chefs, restaurants, and customers through Experience Cloud.
+FoodMarketingSalesforcePlatform is a Salesforce-based food marketplace application designed to connect home chefs, restaurants, and customers through Experience Cloud.
 
 This project includes:
 - Salesforce Sales Cloud
