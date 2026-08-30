@@ -1,0 +1,15 @@
+<template>
+    <div class="slds-p-around_medium">
+            <lightning-button label="JOIN US" onclick={handleButtonClick} class="slds-m-bottom_medium"></lightning-button>
+        </div>
+         <template if:true={showFlow}>
+            <div class="custom-flow-container">
+                <lightning-flow flow-api-name="Chef_Login_Screen" onstatuschange={handleStatusChange}></lightning-flow>
+            </div>
+        </template>
+        <template if:true={showFoodFlow}>
+            <div class="custom-flow-container">
+                <lightning-flow flow-api-name="Create_Food_Record" onstatuschange={handleFoodFlowStatusChange}></lightning-flow>
+            </div>
+        </template>
+    </template>

@@ -1,0 +1,87 @@
+.chef-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Arrange four columns */
+    gap: 20px; /* Space between the cards */
+    margin: 20px;
+}
+
+.chef-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Increased width */
+    height: 400px; /* Adjusted height */
+}
+
+.food-image-container {
+    position: relative;
+}
+
+.chef-image {
+    width: 100%; /* Adjusted to fit the container */
+    height: 250px; /* Decreased height */
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.top-chef-label { /* Corrected the class name */
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #e74c3c;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.chef-card-body {
+    padding: 10px;
+    text-align: center;
+    flex-grow: 1; /* Allows the body to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Start content from the top */
+}
+
+.cuisine-type {
+    font-size: 1rem; /* Adjust font size as needed */
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: auto;
+    background-color: #f1ba39;
+    border-top: 1px solid #eee;
+    font-size: 1.2rem; /* Increase font size for the rating */
+    font-weight: bold; /* Make the rating bold */
+    padding: 2px 0; /* Adjust padding to reduce space */
+}
+
+.rating-icon {
+    margin-right: 5px;
+    color: #f4b710;
+}
+
+.slds-card__footer {
+    text-align: center;
+    padding: 10px 0; /* Adjust padding to reduce space */
+    margin-top: auto; /* Pushes the footer to the bottom of the card */
+}
+
+@media only screen and (max-width: 600px) {
+    .chef-cards-grid {
+        grid-template-columns: repeat(2, 1fr); /* Arrange two columns on smaller screens */
+    }
+}

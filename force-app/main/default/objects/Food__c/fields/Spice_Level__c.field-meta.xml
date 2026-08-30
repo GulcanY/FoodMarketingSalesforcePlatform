@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spice_Level__c</fullName>
+    <externalId>false</externalId>
+    <label>Spice Level</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Spice</fullName>
+                <default>false</default>
+                <label>No Spice</label>
+            </value>
+            <value>
+                <fullName>Mild</fullName>
+                <default>false</default>
+                <label>Mild</label>
+            </value>
+            <value>
+                <fullName>Hot</fullName>
+                <default>false</default>
+                <label>Hot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

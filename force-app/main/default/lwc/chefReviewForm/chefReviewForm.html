@@ -1,0 +1,38 @@
+<!-- chefReviewForm.html -->
+<template>
+    <lightning-card title="Chef Review" icon-name="standard:quick_text">
+        <div class="slds-m-bottom_medium">
+            <lightning-input label="Customer Name" value={customerName} onchange={handleInputChange} data-field="customerName"></lightning-input>
+        </div>
+
+        <div class="slds-m-bottom_medium">    
+            <lightning-combobox 
+                name="chef" 
+                label="Select Chef"
+                        data-field="chefName"
+                        value={chefName}
+                        options={chefOptions}
+                        placeholder="Select a Chef"
+                        onchange={handleInputChange}>
+                    </lightning-combobox>
+        </div>
+        
+
+        <div class="slds-m-bottom_medium">
+            <lightning-input type="number" label="Rating (1-5)" min="1" max="5" value={rating}
+                onchange={handleInputChange} data-field="rating">
+            </lightning-input>
+        </div>
+
+            <div class="slds-m-bottom_medium">
+            <lightning-input type="text" label="Comments" value={comments} onchange={handleInputChange} data-field="comments"></lightning-input>
+
+            <lightning-file-upload label="Upload Image/Video" name="fileUploader" accept={fileTypes}
+                record-id={recordId} onuploadfinished={handleUploadFinished}></lightning-file-upload>
+            </div>
+
+            <lightning-button variant="brand" label="Submit Review" title="Submit Review"
+                onclick={submitReview} class="slds-m-top_medium"></lightning-button>
+       
+    </lightning-card>
+</template>

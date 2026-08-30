@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>Cart__c</members>
+        <members>Cart_Item__c</members>
+        <members>Chef__c</members>
+        <members>ChefReview__c</members>
+        <members>CustomerH__c</members>
+        <members>Food__c</members>
+        <members>OrderH__c</members>
+        <members>OrderLocation__c</members>
+        <members>Social_Interaction__c</members>
+        <name>CustomObject</name>
+    </types>
+
+    <types>
+        <members>AmericanCuisineController</members>
+        <members>AvgRatingPopulation</members>
+        <members>CartController</members>
+        <members>CartTriggerHandler</members>
+        <members>ChefController</members>
+        <members>ChefCtrl</members>
+        <members>ChefDetailsController</members>
+        <members>ChefReviewHandler</members>
+        <members>FoodController</members>
+        <members>FoodCtrl</members>
+        <members>IndianCuisineController</members>
+        <members>ItalianCuisineController</members>
+        <members>MedCuisineController</members>
+        <members>MediterraneanCuisineController</members>
+        <members>MexicanCuisine</members>
+        <members>MexicanCuisineController</members>
+        <members>MidEast</members>
+        <members>MiddleEasternCuisineController</members>
+        <members>Middle_Eastern_Food</members>
+        <members>ShoppingCartController</members>
+        <members>TopChefsController</members>
+        <members>cartDetails</members>
+        <name>ApexClass</name>
+    </types>
+
+    <types>
+        <members>CartTrigger</members>
+        <members>ChefReviewTrigger</members>
+        <name>ApexTrigger</name>
+    </types>
+
+    <types>
+        <members>addFood</members>
+        <members>americanCuisineLwc</members>
+        <members>becomeAChef</members>
+        <members>benefits</members>
+        <members>cartButton</members>
+        <members>chefCard</members>
+        <members>chefRecordPage</members>
+        <members>chefRegister</members>
+        <members>chefRegistration</members>
+        <members>chefReviewForm</members>
+        <members>chefTile</members>
+        <members>chefTileList</members>
+        <members>customSearchBar</members>
+        <members>customerRecord</members>
+        <members>foodPage</members>
+        <members>indianCuisineLWC</members>
+        <members>italianCuisine</members>
+        <members>medCuisineLwc</members>
+        <members>mediterraneanCuisineLWC</members>
+        <members>mexicanCuisineLWC</members>
+        <members>middleEasternCuisineLWC</members>
+        <members>mostOrderedDishes</members>
+        <members>orderConfirmation</members>
+        <members>sliderImageChild</members>
+        <members>sliderImageParent</members>
+        <members>topChefs</members>
+        <members>videoheader</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <types>
+        <members>ChefReviewResponseDate_Flow</members>
+        <members>Chef_Login_Screen</members>
+        <members>Confirmation_email_to_chef</members>
+        <members>Create_Food_Record</members>
+        <members>Customer_Login_Screen</members>
+        <members>Delete_closed_carts</members>
+        <members>Review_Entry_Table</members>
+        <members>Updating_Cart_Item_Price</members>
+        <members>Welcome_Home_Page</members>
+        <members>customer_lwc</members>
+        <name>Flow</name>
+    </types>
+
+    <version>67.0</version>
+</Package>

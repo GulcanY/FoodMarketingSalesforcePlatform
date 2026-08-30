@@ -1,0 +1,45 @@
+.lightning-card .slds-card__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-flow-container {
+    width: 100%; /* Ensures the flow takes full width */
+   
+}
+
+
+.lightning-card .slds-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers children vertically */
+    align-items: center; /* Centers children horizontally */
+    height: 100vh; /* Take full view height to ensure vertical centering in the viewport */
+}
+
+
+.order-confirmation-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #000000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation-container h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.order-confirmation-container p {
+    color: #090909;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.order-details strong {
+    color: #333;
+    margin-right: 5px;
+}

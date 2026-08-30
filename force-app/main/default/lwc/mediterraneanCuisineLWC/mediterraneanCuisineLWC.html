@@ -1,0 +1,78 @@
+<template>
+    <template if:true={foods}>
+        <!-- Single Lightning Card -->
+        <lightning-card title="Mediterranean Cuisine Foods" class="slds-card">
+            <!-- Main Grid Container -->
+            <div class="food-cards-grid">
+                <!-- Loop through each food item -->
+                <template for:each={foods} for:item="foodWrapper" for:index="index">
+                    <!-- Responsive column wrapper -->
+                    <div key={foodWrapper.food.Id} class="slds-card slds-m-around_medium food-card">
+                        <div class="image-container">
+                            <img src={foodWrapper.foodImageUrl} alt="Food Image" class="food-image" />
+                            <!-- Conditionally render chef's image -->
+                            <template if:true={foodWrapper.chefImageUrl}>
+                                <img src={foodWrapper.chefImageUrl} alt="Chef Image" class="chef-image" />
+                            </template>
+                        </div>
+                        <div class="slds-card__body">
+                            <p class="slds-text-heading_medium">{foodWrapper.food.Name}</p>
+                            <p>{foodWrapper.food.Description__c}</p>
+                            <p class="dietary-options">{foodWrapper.dietaryOptions}</p>
+                            <div class="price-quantity-container slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-2">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label large-bold-label" for="price-input">Price:</label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-input type="number" name="price" formatter="currency" value={foodWrapper.food.Price__c} readonly class="blue-border-input"></lightning-input>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="slds-col slds-size_1-of-2">
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label large-bold-label" for="quantity-input-">Quantity:</label>
+                                        <div class="slds-grid slds-gutters_small slds-align_absolute-center">
+                                            <div class="quantity-controls">
+                                                <lightning-button-icon
+                                                    icon-name="utility:dash"
+                                                    alternative-text="Decrease Quantity"
+                                                    variant="border-filled"
+                                                    class="quantity-btn"
+                                                    onclick={handleDecreaseQuantity}
+                                                ></lightning-button-icon>
+                                                <lightning-input
+                                                    id={foodWrapper.food.Id}
+                                                    type="number"
+                                                    class="quantity-input"
+                                                    name="quantity"
+                                                    min="1"
+                                                    formatter="decimal"
+                                                    value={quantity}
+                                                    onchange={handleQuantityChange}
+                                                ></lightning-input>
+                                                <lightning-button-icon
+                                                    icon-name="utility:add"
+                                                    alternative-text="Increase Quantity"
+                                                    variant="border-filled"
+                                                    class="quantity-btn"
+                                                    onclick={handleIncreaseQuantity}
+                                                ></lightning-button-icon>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Card Footer -->
+                        <div class="slds-card__footer">
+                            <lightning-button label="Add to Cart" variant="brand" data-food-id={foodWrapper.food.Id} onclick={handleAddToCart}></lightning-button>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={foods}>
+        <p>No foods available.</p>
+    </template>
+</template>

@@ -1,0 +1,18 @@
+.content {
+    padding: 8px;
+    border-radius: 0.25rem;
+    background-image: url('https://www.canva.com/design/DAGGXYFRJSg/HAJ1r2Mm-RNTw5PypiyDuA/view?utm_content=DAGGXYFRJSg&utm_campaign=designshare&utm_medium=link&utm_source=editor');
+}
+
+
+img.chefImage {
+    height: 150px;
+    width: 150px;
+    pointer-events: none;
+    border-radius: 40%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.title {
+    font-weight: bold;
+    text-transform: uppercase;
+}

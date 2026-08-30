@@ -1,0 +1,47 @@
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.custom-flow-container {
+    background-color: #e8f1fb; /* Light blue background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center the text inside the container */
+}
+
+.slds-card__header {
+    background-color: #e8f1fb; /* Light blue background */
+    border-bottom: 10px solid #d1e3f9; /* Border for the header */
+    font-size: 2em; /* Double the font size */
+    margin-bottom: 20px; /* Space between header and button */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Adjust height as needed */
+    background-color: #f3f3f3; /* Optional: Add a background color for better visibility */
+}
+
+.join-us-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.join-us-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}

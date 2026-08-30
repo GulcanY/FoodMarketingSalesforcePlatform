@@ -1,0 +1,14 @@
+<template>
+    <template if:true={showFoodFlow}>
+        <lightning-card title="Chef Registration">
+            <div class="custom-flow-container">
+                <lightning-flow flow-api-name="Chef_Login_Screen" onstatuschange={handleFoodFlowStatusChange}></lightning-flow>
+            </div>
+        </lightning-card>
+    </template>
+    <template if:false={showFoodFlow}>
+        <div class="button-container">
+            <button class="join-us-button" onclick={handleButtonClick}>Join Us</button>
+        </div>
+    </template>
+</template>

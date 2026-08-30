@@ -1,0 +1,14 @@
+<template>
+    <div onclick={clickHandler}>
+        <div class="content">
+            <img src={chefImage} class="slds-align_absolute-center chefImage" alt="Chef Image" />
+            <div class="slds-var-m-around_medium">
+                <p class="title slds-align_absolute-center">{chef.Name__c}</p>
+                <p class="slds-align_absolute-center">
+                    <span style="font-size:200%;color:yellow;">&starf;</span>
+                    {chef.AvgRate__c}
+                </p>            
+            </div>
+        </div>
+    </div>
+</template>

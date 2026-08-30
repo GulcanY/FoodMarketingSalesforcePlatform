@@ -1,0 +1,26 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_x-large">
+            <h2 class="title">Top Ordered Foods</h2>
+        </div>
+        <div class="food-container">
+            <template if:true={foods}>
+                <template for:each={foods} for:item="foodWrapper">
+                    <div key={foodWrapper.food.Id} class="food-item">
+                        <img src={foodWrapper.imageUrl} alt={foodWrapper.food.Name} />
+                        <div class="food-details">
+                            <p class="food-name"><strong>{foodWrapper.food.Name}</strong></p>
+                            <p class="food-chef">Chef {foodWrapper.chefName}</p>
+                            <p class="food-cuisine"><em>Cuisine Type: {foodWrapper.food.Cuisine_Type__c}</em></p>
+                            <p class="food-price"><em>Price: ${foodWrapper.food.Price__c}</em></p>
+                            <!-- <p class="food-orders">Number of Orders: {foodWrapper.orderCount}</p> -->
+                        </div>
+                    </div>
+                </template>
+            </template>
+            <template if:true={error}>
+                <p>{error}</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>

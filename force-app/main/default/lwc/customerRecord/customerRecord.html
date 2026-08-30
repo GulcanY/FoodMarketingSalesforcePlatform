@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Customer Login" icon-name="custom:custom14">
+        <div class="custom-flow-container">
+            <lightning-flow
+                flow-api-name="customer_lwc"
+                onstatuschange={handleStatusChange}>
+            </lightning-flow>
+        </div>
+    </lightning-card>
+
+    <!-- Modal for Order Confirmation -->
+    <template if:true={isModalOpen}>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <!-- Modal/Popup Header -->
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="utility:close"
+                            variant="inverse"
+                            size="small"
+                            alternative-text="Close">
+                        </lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 class="slds-text-heading_medium">Order Confirmation</h2>
+                </header>
+                <!-- Modal/Popup Body -->
+                <div class="slds-modal__content slds-p-around_medium">
+                    <div class="order-confirmation-container">
+                        <h1>Thank you for your order</h1>
+                        <p>An email confirmation has been sent to</p>
+                        <div class="order-details">
+                            <p><strong>Cart number:</strong> {cartNumber}</p>
+                            <p><strong>Ordered Items:</strong> {totalQuantity}</p>
+                            <p><strong>Order total:</strong> {totalAmount}</p>
+                            <p><strong>Delivered to:</strong> {customerName}</p>
+                            <p><strong>Delivery Address:</strong> {deliveryAddress}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Modal/Popup Footer -->
+                <footer class="slds-modal__footer">
+                    <lightning-button variant="neutral"
+                                       label="Close"
+                                       title="Close"
+                                       onclick={closeModal}>
+                    </lightning-button>
+                </footer>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_medium">
+            <template if:true={chefsInfo.data}>
+                <div class="content">
+                    <template for:each={chefsInfo.data} for:item="cf">
+                        <c-chef-tile
+                            key={cf.Id}
+                            chef-image={cf}
+                            chef={cf}
+                            onselectchef={chefSelecttHandler}>       
+                        </c-chef-tile>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

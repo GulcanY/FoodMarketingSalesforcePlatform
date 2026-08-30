@@ -1,0 +1,88 @@
+<template>
+    <template if:true={foods}>
+        <div class="food-cards-grid">
+            <template for:each={foods} for:item="foodWrapper" for:index="index">
+                <div key={foodWrapper.food.Id} class="slds-card slds-m-around_medium food-card">
+                    <div class="image-container">
+                        <img src={foodWrapper.foodImageUrl} alt="Food Image" class="food-image" />
+                        <template if:true={foodWrapper.chefImageUrl}>
+                            <img src={foodWrapper.chefImageUrl} alt="Chef Image" class="chef-image" />
+                        </template>
+                    </div>
+                    <div class="slds-card__body">
+                        <p class="slds-text-heading_medium">{foodWrapper.food.Name}</p>
+                        <p>{foodWrapper.food.Description__c}</p>
+                        <p class="dietary-options">{foodWrapper.dietaryOptions}</p>
+                        <div class="button-container">
+                            <lightning-button label="View Details" variant="brand" data-food-id={foodWrapper.food.Id} onclick={handleViewDetail}></lightning-button>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={foods}>
+        <p>No foods available.</p>
+    </template>
+
+    <!-- Modal for displaying food details -->
+    <template if:true={isModalOpen}>
+        <section role="dialog"  class="slds-modal slds-fade-in-open" aria-modal="true">
+            <div class="slds-modal__container custom-modal-size">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                        <lightning-icon icon-name="action:close" size="small"></lightning-icon>
+                        <span class="slds-assistive-text">Close</span>
+                    </button>
+                    <h2 id="modal-heading-id" class="slds-text-heading_medium">{selectedFood.food.Name}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium scrollable-content">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <img src={selectedFood.foodImageUrl} alt="Food Image" class="food-image"  />
+                        </div>
+                        <div class="slds-col slds-size_1-of-1 slds-large-size_1-of-2">
+                            <img src={selectedFood.chefImageUrl} alt="Chef Image" class="chef-image" />
+                            <p><strong>Chef:</strong> {selectedFood.food.Chef__r.Name}</p> 
+                            <p><strong>Preparation Time:</strong> {selectedFood.food.Prep_Time__c}</p>
+                            <p><strong>Servings:</strong> {selectedFood.food.Servings__c}</p>
+                            <p><strong>Spice Level:</strong> {selectedFood.food.Spice_Level__c}</p>
+                            <p><strong>Description:</strong> {selectedFood.food.Description__c}</p>
+                            <p><strong>Ingredients:</strong> {selectedFood.food.Ingredients__c}</p>
+                            <p><strong>Price:</strong>
+                                <lightning-formatted-number value={selectedFood.food.Price__c} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                            </p>
+                            <div class="slds-m-top_medium  quantity-section">
+                                <p class="quantity-title"><strong>Quantity</strong></p>
+                                <div class="slds-grid slds-grid_align-center quantity-controls"></div>
+                                <lightning-button-icon icon-name="utility:dash"
+                                                       variant="border-filled"
+                                                       size="medium"
+                                                       alternative-text="Decrease"
+                                                       title="Decrease Quantity"
+                                                       onclick={handleDecreaseQuantity}></lightning-button-icon>
+                        
+                                <span class="slds-m-horizontal_medium">{quantity}</span>
+                        
+                                <lightning-button-icon icon-name="utility:add"
+                                                       variant="border-filled"
+                                                       size="medium"
+                                                       alternative-text="Increase"
+                                                       title="Increase Quantity"
+                                                       onclick={handleIncreaseQuantity}></lightning-button-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer class="slds-modal__footer">
+                    <div class="slds-grid slds-grid_align-center">
+                        <lightning-button variant="brand" label="Add to Cart" onclick={handleAddToCart}></lightning-button>
+                    </div>
+                </footer>
+            </div>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </section>
+    </template>
+    
+</template>

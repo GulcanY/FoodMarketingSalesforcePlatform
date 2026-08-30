@@ -1,0 +1,154 @@
+.food-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Arrange three columns */
+    gap: 20px; /* Space between the cards */
+    margin: 20px;
+}
+
+.food-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures header and footer are pushed to the ends */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensure each card has the same height */
+}
+
+.food-card .slds-card__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures header and footer are pushed to the ends */
+    flex-grow: 1; /* Allows the body to expand and push the footer down */
+    padding: 20px;
+}
+
+.food-card {
+    margin: 20px; /* Adds space outside the card (between the card and other elements) */
+    padding: 20px; /* Adds padding inside the card, between the border and text/content */
+    border: 1px solid #ccc; /* Adds a border around the card (optional, for visualization) */
+    border-radius: 8px; /* Rounds the corners of the card */
+    background-color: white; /* Ensures the card has a visible background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for a 3D effect */
+}
+
+.food-card .slds-card__body {
+    text-align: justify; /* Justifies the text within the card body */
+    padding: 20px; /* Adds padding within the card body */
+}
+
+.food-card .slds-text-heading_medium {
+    text-align: center; /* Center-aligns the heading inside the card */
+    padding-bottom: 8px; /* Adds space below the heading */
+    font-weight: bold;
+
+}
+
+.dietary-options {
+    color: #00060b;
+    font-size: 0.8rem;
+    font-style: italic;
+    margin-top: 8px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+
+.food-card.image-container {
+    width: 100%;
+    height: 250px; /* Set a fixed height for the image container */
+    overflow: hidden;
+    position: relative;
+}
+
+.food-card .food-image {
+    width: 200px; /* Larger width */
+    height: 200px; /* Larger height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    display: block; /* Removes bottom space/margin */
+    margin: 0 auto; /* Centers the image horizontally */
+}
+
+.food-card .chef-image {
+    position: absolute;
+    bottom: 10px; /* Adjust as necessary */
+    right: 10px;
+    border-radius: 50%; /* Circle shape */
+    width: 75px; /* Larger size */
+    height: 75px; /* Larger size */
+    object-fit: cover;
+}
+
+
+.large-bold-label {
+    font-size: 1em; /* Increase the font size */
+    font-weight: bold; /* Make the font bold */
+    margin-bottom: 1px; /* Add some space below the label */
+  
+}
+.custom-input {
+    --lwc-inputBorderColor: #0958eb; /* Normal state */
+    --lwc-inputBorderColorHover: #021f38; /* Hover state */
+    --lwc-inputBorderColorFocus: #052f53; /* Focus state */
+}
+
+/* Assuming your lightning-input is wrapped in a div with a class 'custom-input' */
+.custom-input lightning-input {
+    border: 2px solid #1146a7; /* SLDS border color for light grey */
+}
+
+.custom-input lightning-input:focus {
+    border: 2px solid #1589ee; /* SLDS border color for focus */
+}
+
+
+
+.slds-card__footer {
+    margin-top: auto; /* Pushes the footer to the bottom of the card */
+    text-align: center;
+}
+
+
+
+.quantity-controls {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 15px;
+}
+
+.quantity-btn {
+    background-color: #007bff; /* Replace with the desired blue color */
+    border-radius: 50%; /* Make it circular if required */
+    color: white; /* Icon color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+    border: none; /* Removes any border */
+}
+
+.quantity-btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+.quantity-btn, .quantity-input lightning-input {
+    height: 0.8rem; 
+    flex-shrink: 0; 
+} 
+
+.quantity-input {
+    width: 60px;  
+    flex-grow: 0; 
+}
+.quantity-input lightning-input {
+    height: 100%;
+    --lwc-inputFontSize: 1rem;  
+    --lwc-inputTextAlign: center;  
+}
+
+@media only screen and (max-width: 600px) {
+    .food-card {
+        width: 100%; /* Full width on smaller screens */
+    }
+    .image-container {
+        height: 100px; /* Smaller fixed height on mobile */
+    }
+}

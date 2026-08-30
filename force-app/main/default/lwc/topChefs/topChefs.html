@@ -1,0 +1,30 @@
+<template>
+    <template if:true={chefs}>
+        <div class="chef-cards-grid">
+            <template for:each={chefs} for:item="chefWrapper" for:index="index">
+                <div key={chefWrapper.chef.Id} class="slds-card slds-m-around_medium chef-card" data-id={chefWrapper.chef.Id} onclick={navigateToChef}>
+                    <!-- Food Image Container -->
+                    <div class="food-image-container">
+                        <template if:true={chefWrapper.chefImageUrl}>
+                            <img src={chefWrapper.chefImageUrl} alt="Chef Image" class="chef-image" />
+                        </template>
+                        <div class="top-chef-label">TOP CHEF</div>
+                    </div>
+
+                    <!-- Chef Card Body -->
+                    <div class="slds-card__body chef-card-body">
+                        <p class="slds-text-heading_medium">Chef {chefWrapper.chef.Name}</p>
+                        <p class="cuisine-type">{chefWrapper.chef.Cuisine_Type__c}</p>
+                        <div class="rating-container">
+                            <lightning-icon icon-name="utility:favorite" alternative-text="Rating" size="small" class="rating-icon"></lightning-icon>
+                            <lightning-formatted-number value={chefWrapper.chef.AvgRate__c} format-style="decimal" maximum-fraction-digits="1" minimum-fraction-digits="1"></lightning-formatted-number>
+                        </div>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </template>
+    <template if:false={chefs}>
+        <p>No chefs available.</p>
+    </template>
+</template>

@@ -1,0 +1,20 @@
+/* chefRecordPage.css */
+.slds-list_horizontal {
+    border-bottom: 1px solid #e0e0e0;  /* Adds a subtle line under each item for better separation */
+}
+
+.slds-item_label {
+    color: #5e5e5e; /* Dark gray for better readability */
+    font-weight: bold; /* Makes labels stand out */
+    margin-right: 15px; /* More space between label and detail */
+}
+
+.slds-item_detail {
+    margin-bottom: 12px; /* Adds space between items */
+    color: #333; /* Darker text for better readability */
+}
+
+.slds-card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    padding: 20px; /* More padding inside the card */
+}

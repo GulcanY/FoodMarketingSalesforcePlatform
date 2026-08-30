@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Add Food">
+        <template if:true={showFoodFlow}>
+            <div class="custom-flow-container">
+                <lightning-flow flow-api-name="Create_Food_Record" onstatuschange={handleFoodFlowStatusChange}></lightning-flow>
+            </div>
+        </template>
+    </lightning-card>
+</template>

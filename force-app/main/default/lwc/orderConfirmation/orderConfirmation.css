@@ -1,0 +1,25 @@
+.order-confirmation-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #161616;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation-container h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.order-confirmation-container p {
+    color: #ea0707;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.order-details strong {
+    color: #333;
+    margin-right: 5px;
+}

@@ -1,0 +1,51 @@
+<template>
+    <div class="cart-button-container">
+        <button class="cart-button" onclick={handleCartButtonClick}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M10 20c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2zm12 2c-1.104 0-2-.896-2-2s.896-2 2-2 2 .896 2 2-.896 2-2 2zm-15.423-4h12.964l3.459-11h-20.846l-2.154-7h-4.954v2h3.183l1.953 6.348-1.507 5.075c-.423 1.42.669 2.577 2.152 2.577zm.423-8l1.5 5h11.654l1.5-5h-14.654z"/>
+            </svg>
+            Cart
+            <span class="cart-badge">{cartItemCount}</span>
+        </button>
+    </div>
+
+    <template if:true={isCartOpen}>
+        <div class="slds-backdrop slds-backdrop_open" onclick={handleCartClose}></div>
+        <div class="mini-cart">
+            <h2 class="cart-title">Your Cart</h2>
+            <template if:true={cartItems}>
+                <template for:each={cartItems} for:item="item">
+                    <div key={item.cartItem.Id} class="cart-item">
+                        <img src={item.foodImageUrl} alt="Food Image" class="food-image" />
+                        <div class="item-details">
+                            <p>{item.cartItem.Food__r.Name}</p>
+                        </div>
+            
+                            <div class="quantity-controls">
+                                <button class="quantity-button decrease" data-id={item.cartItem.Id} onclick={handleDecreaseQuantity}>-</button>
+                                <input type="text" class="quantity-input" value={item.cartItem.l_Quantity__c} data-id={item.cartItem.Id} onchange={handleQuantityChange}>
+                                <button class="quantity-button increase" data-id={item.cartItem.Id} onclick={handleIncreaseQuantity}>+</button>
+                            </div>
+
+                  
+                        <div class="delete-container">
+                        <lightning-button-icon icon-name="utility:delete" alternative-text="Remove" data-id={item.cartItem.Id} onclick={handleRemoveItem}></lightning-button-icon>
+                    </div>
+                </div>
+
+                </template>
+                <div class="cart-summary">
+                    <p>Total Items: {totalItems}</p>
+                    <p>Total Price: <lightning-formatted-number value={totalPrice} format-style="currency" currency-code="USD"></lightning-formatted-number></p>
+                </div>
+               
+                <lightning-button class="checkout-button" label="Checkout" variant="brand" onclick={handleCheckout}></lightning-button>
+              
+            </template>
+            <template if:false={cartItems}>
+                <p>Your cart is empty.</p>
+            </template>
+        </div>
+        <div class="slds-backdrop slds-backdrop_open" onclick={toggleCart}></div>
+    </template>
+</template>
