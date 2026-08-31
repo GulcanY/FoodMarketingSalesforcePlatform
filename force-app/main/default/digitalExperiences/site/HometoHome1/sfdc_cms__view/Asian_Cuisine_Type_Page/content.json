@@ -1,0 +1,63 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "Asian Cuisine Type Page",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"7d8fd8f1-e763-43d7-b13c-02e27627f3c6\",\"columns\":[{\"UUID\":\"baef733b-9c6f-4704-9b2f-90300fd655da\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"6\",\"seedComponents\":[]},{\"UUID\":\"34d37dd3-e27d-4c87-8da1-4ac4085d5d59\",\"columnName\":\"Column 2\",\"columnKey\":\"d3d84\",\"columnWidth\":\"6\",\"seedComponents\":[]}]}"
+          },
+          "children" : [ {
+            "id" : "baef733b-9c6f-4704-9b2f-90300fd655da",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          }, {
+            "id" : "34d37dd3-e27d-4c87-8da1-4ac4085d5d59",
+            "name" : "d3d84",
+            "title" : "Column 2",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "7d8fd8f1-e763-43d7-b13c-02e27627f3c6",
+          "type" : "component"
+        } ],
+        "id" : "d8ca9f04-2a83-47d4-bbed-e2cc9bb96276",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "dxpStyle" : { },
+            "pageTitle" : "Asian Cuisine Type Page",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "6ee4465e-7c7d-4864-b5d2-5fc23ff73583",
+          "type" : "component"
+        } ],
+        "id" : "f97d3c6e-e995-4fd7-ab2f-ceb72220d85f",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "d756e9c0-d7d4-4bb3-9697-d2802b0739de",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-asian-cuisine-type-page"
+  },
+  "urlName" : "asian-cuisine-type-page"
+}

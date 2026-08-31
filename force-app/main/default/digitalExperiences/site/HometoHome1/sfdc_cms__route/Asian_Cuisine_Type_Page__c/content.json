@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "Asian Cuisine Type Page",
+  "contentBody" : {
+    "activeViewId" : "Asian_Cuisine_Type_Page",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-asian-cuisine-type-page",
+    "urlPrefix" : "asian-cuisine-type-page"
+  },
+  "urlName" : "asian-cuisine-type-page"
+}
