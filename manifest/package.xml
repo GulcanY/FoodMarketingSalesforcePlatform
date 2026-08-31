@@ -91,5 +91,30 @@
         <name>Flow</name>
     </types>
 
+    <types>
+        <members>HometoHome</members>
+        <name>Network</name>
+    </types>
+
+    <types>
+        <members>HometoHome</members>
+        <name>CustomSite</name>
+    </types>
+
+    <types>
+        <members>SFDC_Default_Navigation_HometoHome</members>
+        <name>NavigationMenu</name>
+    </types>
+
+    <types>
+        <members>site/HometoHome1</members>
+        <name>DigitalExperienceBundle</name>
+    </types>
+
+    <types>
+        <members>HometoHome1</members>
+        <name>DigitalExperienceConfig</name>
+    </types>
+
     <version>67.0</version>
 </Package>
