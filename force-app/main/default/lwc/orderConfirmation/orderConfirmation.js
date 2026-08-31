@@ -1,5 +1,5 @@
 import { LightningElement, api, wire, track } from 'lwc';
-import getCartDetails from '@salesforce/apex/cartDetails.getCartDetails';
+import getCartDetails from '@salesforce/apex/cartDetails.getMostRecentClosedCart';
 
 export default class OrderCompletion extends LightningElement {
     @api recordId;  // This should be set by the flow when it finishes, passing the Cart ID
