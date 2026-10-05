@@ -1,0 +1,93 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Mediterranean Cuisine",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"8b5a032d-6ce4-43cb-8f06-05a72d2ee1ca\",\"columns\":[{\"UUID\":\"9a4139ea-aa59-41ce-a310-29f82eda5292\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "definition": "c:cartButton",
+                      "id": "747c2d1e-0fab-4dca-a093-a679aa379077",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<h1 style=\"font-size: 2rem; font-weight: 700; margin: 1rem 0;\">Mediterranean Cuisine</h1>"
+                      },
+                      "definition": "community_builder:htmlEditor",
+                      "id": "b3a325e7-88fc-4304-bd9e-ff18ddf142a5",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {},
+                      "definition": "c:medCuisineLwc",
+                      "id": "ca567f5f-3e07-4d28-96cc-ff72d1aa1185",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "9a4139ea-aa59-41ce-a310-29f82eda5292",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "8b5a032d-6ce4-43cb-8f06-05a72d2ee1ca",
+              "type": "component"
+            }
+          ],
+          "id": "8bab59c0-17e2-4a9d-8d91-25879b6cb7e2",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Mediterranean Cuisine | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "2f335073-ad7f-43ac-bc1e-9d46b54542b0",
+              "type": "component"
+            }
+          ],
+          "id": "c39fed88-0fa7-491b-a387-bd0320d310bf",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "6af427c9-3998-4eb0-93a6-ee1838ed90d4",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-mediterranean-cuisine"
+  },
+  "urlName": "mediterranean-cuisine"
+}

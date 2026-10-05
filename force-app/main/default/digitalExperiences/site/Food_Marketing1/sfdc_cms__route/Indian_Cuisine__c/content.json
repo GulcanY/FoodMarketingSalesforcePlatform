@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Indian Cuisine",
+  "contentBody": {
+    "activeViewId": "indianCuisine",
+    "configurationTags": [],
+    "pageAccess": "UseParent",
+    "routeType": "custom-indian-cuisine",
+    "urlPrefix": "indian-cuisine"
+  },
+  "urlName": "indian-cuisine"
+}

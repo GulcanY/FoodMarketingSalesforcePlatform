@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Chef Detail",
+  "contentBody": {
+    "activeViewId": "chefDetail",
+    "configurationTags": [],
+    "pageAccess": "UseParent",
+    "routeType": "detail-a03",
+    "urlPrefix": "chef"
+  },
+  "urlName": "chef-detail"
+}

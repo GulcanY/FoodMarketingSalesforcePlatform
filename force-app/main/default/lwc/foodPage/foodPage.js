@@ -1,8 +1,13 @@
 import { LightningElement, wire, track } from 'lwc';
 import getAsianCuisineFoods from '@salesforce/apex/FoodController.getAsianCuisineFoods';
 import addToCart from '@salesforce/apex/ShoppingCartController.addToCart';
+import isGuest from '@salesforce/user/isGuest';
+import { NavigationMixin } from 'lightning/navigation';
+import { publish, MessageContext } from 'lightning/messageService';
+import CART_CHANNEL from '@salesforce/messageChannel/CartChannel__c';
 
-export default class FoodPage extends LightningElement {
+export default class FoodPage extends NavigationMixin(LightningElement) {
+    @wire(MessageContext) messageContext;
     @track foods = [];
     @track isModalOpen = false; // Track whether the modal is open
     @track selectedFood = null; // Store the selected food data
@@ -65,6 +70,10 @@ export default class FoodPage extends LightningElement {
     }
 
     handleAddToCart() {
+        if (isGuest) {
+            this.navigateToLogin();
+            return;
+        }
         if (!this.selectedFood) {
             console.error('No food selected');
             return;
@@ -77,11 +86,19 @@ export default class FoodPage extends LightningElement {
         addToCart({ foodId, quantity, price })
             .then(result => {
                 console.log('Cart Item Created:', result);
+                publish(this.messageContext, CART_CHANNEL, { cartItemId: result.Id });
                 this.closeModal(); // Optionally close the modal after adding to cart
             })
             .catch(error => {
                 console.error('Error adding to cart:', error);
                 console.log('Error details:', JSON.stringify(error.body)); // Log the detailed error
             });
+    }
+
+    navigateToLogin() {
+        this[NavigationMixin.Navigate]({
+            type: 'comm__loginPage',
+            attributes: { actionName: 'login' }
+        });
     }
 }

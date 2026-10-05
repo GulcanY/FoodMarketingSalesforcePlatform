@@ -1,0 +1,93 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Indian Cuisine",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"5e88be60-5d53-4809-9c93-c7aa46f3746e\",\"columns\":[{\"UUID\":\"0362adf8-d460-427f-910e-2edc0f92583a\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "definition": "c:cartButton",
+                      "id": "cbbb1f3e-e8ed-495d-9d8d-47361de49897",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<h1 style=\"font-size: 2rem; font-weight: 700; margin: 1rem 0;\">Indian Cuisine</h1>"
+                      },
+                      "definition": "community_builder:htmlEditor",
+                      "id": "6ec06769-f79a-49e4-8c50-e98256af3743",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {},
+                      "definition": "c:indianCuisineLWC",
+                      "id": "786e94bc-8987-4a37-b33e-39b1dcdaf320",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "0362adf8-d460-427f-910e-2edc0f92583a",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "5e88be60-5d53-4809-9c93-c7aa46f3746e",
+              "type": "component"
+            }
+          ],
+          "id": "702c1423-1d89-4630-96f1-3d2740678e54",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Indian Cuisine | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "d7633dfb-81ca-4244-98b6-c928fdfc7b59",
+              "type": "component"
+            }
+          ],
+          "id": "9b702bb5-dbb2-4038-8280-01edc41f5b1a",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "33b0545e-db18-48de-8a80-bf845de627b6",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-indian-cuisine"
+  },
+  "urlName": "indian-cuisine"
+}

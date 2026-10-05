@@ -1,0 +1,105 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef1"
+      },
+      "Name": "Kung Pao Chicken",
+      "Chef__c": "@ChefRef1",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Wok-fried chicken with peanuts, dried chilies and Sichuan pepper.",
+      "Ingredients__c": "Chicken, peanuts, dried chilies, Sichuan pepper, soy sauce, scallions",
+      "Servings__c": 2,
+      "Spice_Level__c": "Hot",
+      "Price__c": 14.5,
+      "Available__c": true,
+      "Dietary__c": "DairyFree",
+      "Preparation_Time__c": "00:25:00.000Z"
+    },
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef2"
+      },
+      "Name": "Vegetable Dumplings",
+      "Chef__c": "@ChefRef1",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Steamed dumplings filled with cabbage, mushroom and carrot.",
+      "Ingredients__c": "Flour, napa cabbage, shiitake, carrot, ginger, sesame oil",
+      "Servings__c": 4,
+      "Spice_Level__c": "No Spice",
+      "Price__c": 11.0,
+      "Available__c": true,
+      "Dietary__c": "Vegan;DairyFree",
+      "Preparation_Time__c": "00:40:00.000Z"
+    },
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef3"
+      },
+      "Name": "Mapo Tofu",
+      "Chef__c": "@ChefRef1",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Silky tofu in a spicy bean sauce.",
+      "Ingredients__c": "Tofu, doubanjiang, garlic, ginger, Sichuan pepper",
+      "Servings__c": 2,
+      "Spice_Level__c": "Hot",
+      "Price__c": 12.0,
+      "Available__c": true,
+      "Dietary__c": "Vegetarian;DairyFree",
+      "Preparation_Time__c": "00:20:00.000Z"
+    },
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef4"
+      },
+      "Name": "Chicken Teriyaki Donburi",
+      "Chef__c": "@ChefRef2",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Grilled chicken thigh glazed with teriyaki over steamed rice.",
+      "Ingredients__c": "Chicken thigh, soy sauce, mirin, sugar, rice, sesame",
+      "Servings__c": 1,
+      "Spice_Level__c": "No Spice",
+      "Price__c": 13.5,
+      "Available__c": true,
+      "Dietary__c": "DairyFree",
+      "Preparation_Time__c": "00:30:00.000Z"
+    },
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef5"
+      },
+      "Name": "Miso Ramen",
+      "Chef__c": "@ChefRef2",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Rich miso broth with noodles, corn, egg and scallions.",
+      "Ingredients__c": "Ramen noodles, miso, chicken broth, egg, corn, scallions, nori",
+      "Servings__c": 1,
+      "Spice_Level__c": "Mild",
+      "Price__c": 15.0,
+      "Available__c": true,
+      "Preparation_Time__c": "00:45:00.000Z"
+    },
+    {
+      "attributes": {
+        "type": "Food__c",
+        "referenceId": "FoodRef6"
+      },
+      "Name": "Pad Thai",
+      "Chef__c": "@ChefRef3",
+      "Cuisine_Type__c": "Asian",
+      "Description__c": "Stir-fried rice noodles with tamarind, egg and peanuts.",
+      "Ingredients__c": "Rice noodles, tamarind, egg, tofu, bean sprouts, peanuts",
+      "Servings__c": 2,
+      "Spice_Level__c": "Mild",
+      "Price__c": 13.0,
+      "Available__c": true,
+      "Dietary__c": "DairyFree",
+      "Preparation_Time__c": "00:25:00.000Z"
+    }
+  ]
+}

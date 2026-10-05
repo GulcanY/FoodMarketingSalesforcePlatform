@@ -1,0 +1,81 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Chef Related List",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"46c0d6f9-75ab-4f20-885f-427139680a18\",\"columns\":[{\"UUID\":\"32f80589-337c-406a-987d-054dc61f65b4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<p>Open a chef from the <a href=\"./\">home page</a> to see their dishes.</p>"
+                      },
+                      "definition": "community_builder:htmlEditor",
+                      "id": "c29707a4-ba76-454a-aaca-7a99f4858b24",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "32f80589-337c-406a-987d-054dc61f65b4",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "46c0d6f9-75ab-4f20-885f-427139680a18",
+              "type": "component"
+            }
+          ],
+          "id": "bfaeeab3-6541-48f6-b871-1a6ddf75262b",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Chef Related List | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "9ff92dce-995c-4b06-b036-d9cd7a70ff46",
+              "type": "component"
+            }
+          ],
+          "id": "c9d28613-a9ea-4110-a529-33743d85271b",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "4466d89a-d842-4106-a4e0-4f1b1f56343b",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "relatedlist-a03"
+  },
+  "urlName": "chef-related-list"
+}

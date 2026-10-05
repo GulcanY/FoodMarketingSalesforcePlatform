@@ -1,0 +1,55 @@
+{
+  "records": [
+    {
+      "attributes": {
+        "type": "Chef__c",
+        "referenceId": "ChefRef1"
+      },
+      "Name": "Ann Archer",
+      "Name__c": "Ann Archer",
+      "Email__c": "ann.archer@example.com",
+      "Phone__c": "(555) 010-1001",
+      "Available__c": true,
+      "AvgRate__c": 4.8,
+      "Cuisine_Type__c": "Asian",
+      "City__c": "San Francisco",
+      "State__c": "CA",
+      "Pickup_Delivery_Preference__c": "Chef Delivery",
+      "Bio__c": "Home-style Cantonese and Sichuan dishes."
+    },
+    {
+      "attributes": {
+        "type": "Chef__c",
+        "referenceId": "ChefRef2"
+      },
+      "Name": "John Thunder",
+      "Name__c": "John Thunder",
+      "Email__c": "john.thunder@example.com",
+      "Phone__c": "(555) 010-1002",
+      "Available__c": true,
+      "AvgRate__c": 4.6,
+      "Cuisine_Type__c": "Asian",
+      "City__c": "Seattle",
+      "State__c": "WA",
+      "Pickup_Delivery_Preference__c": "Customer Pickup",
+      "Bio__c": "Japanese home cooking: ramen, donburi and gyoza."
+    },
+    {
+      "attributes": {
+        "type": "Chef__c",
+        "referenceId": "ChefRef3"
+      },
+      "Name": "Somchai Prasert",
+      "Name__c": "Somchai Prasert",
+      "Email__c": "somchai.prasert@example.com",
+      "Phone__c": "(555) 010-1003",
+      "Available__c": false,
+      "AvgRate__c": 4.2,
+      "Cuisine_Type__c": "Asian",
+      "City__c": "Austin",
+      "State__c": "TX",
+      "Pickup_Delivery_Preference__c": "Chef Delivery",
+      "Bio__c": "Thai street food classics (currently unavailable)."
+    }
+  ]
+}

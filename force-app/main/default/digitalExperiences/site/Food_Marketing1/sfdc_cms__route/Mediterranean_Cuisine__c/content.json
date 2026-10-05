@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Mediterranean Cuisine",
+  "contentBody": {
+    "activeViewId": "mediterraneanCuisine",
+    "configurationTags": [],
+    "pageAccess": "UseParent",
+    "routeType": "custom-mediterranean-cuisine",
+    "urlPrefix": "mediterranean-cuisine"
+  },
+  "urlName": "mediterranean-cuisine"
+}

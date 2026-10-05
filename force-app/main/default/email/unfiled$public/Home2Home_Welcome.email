@@ -1,0 +1,8 @@
+Hi {!Receiving_User.FirstName},
+
+            Welcome to home2home! To get started, go to {!Community_Url}
+
+            Username: {!Receiving_User.Username}
+
+            Thanks,
+            The home2home Team

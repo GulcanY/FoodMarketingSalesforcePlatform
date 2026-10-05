@@ -1,46 +1,35 @@
 public with sharing class FoodController {
     @AuraEnabled(cacheable=true)
-    public static List<FoodWithChefWrapper> getAsianCuisineFoods() {
-        // Query to fetch required fields from Food__c and related Chef__c details
-        List<Food__c> foods = [
-            SELECT Id, Name, Description__c, Dietary__c, Price__c, Cuisine_Type__c, Chef__r.Name, Chef__r.Id,
-            Ingredients__c, Prep_Time__c, Servings__c, Spice_Level__c,
-                   (SELECT ContentDocument.LatestPublishedVersionId FROM ContentDocumentLinks)
-            FROM Food__c 
-            WHERE Cuisine_Type__c = 'Asian'
-        ];
-    
-        // Prepare data to return
-        List<FoodWithChefWrapper> wrappedFoods = new List<FoodWithChefWrapper>();
-        for (Food__c food : foods) {
-            FoodWithChefWrapper wrapper = new FoodWithChefWrapper();
-            wrapper.food = food;
-            if (!food.ContentDocumentLinks.isEmpty()) {
-                wrapper.foodImageUrl = '/sfc/servlet.shepherd/version/download/' + food.ContentDocumentLinks[0].ContentDocument.LatestPublishedVersionId;
-            }
-            if (food.Chef__r != null) {
-                List<ContentDocumentLink> chefLinks = [SELECT ContentDocument.LatestPublishedVersionId 
-                                                       FROM ContentDocumentLink 
-                                                       WHERE LinkedEntityId = :food.Chef__r.Id];
-                System.debug('Chef ContentDocumentLinks Count: ' + chefLinks.size());
-                if (!chefLinks.isEmpty()) {
-                    wrapper.chefImageUrl = '/sfc/servlet.shepherd/version/download/' + chefLinks[0].ContentDocument.LatestPublishedVersionId;
-                    System.debug('Chef Image URL for ' + food.Chef__r.Name + ': ' + wrapper.chefImageUrl);
-                } else {
-                    System.debug('No Chef Image URL for ' + food.Chef__r.Name);
-                }
-            } else {
-                System.debug('No Chef associated with food: ' + food.Id);
-            }
-            wrappedFoods.add(wrapper);
-        }
-        System.debug('Total wrapped foods with chef images: ' + wrappedFoods.size());
-        return wrappedFoods;
+    public static List<FoodCatalogService.FoodWithChefWrapper> getAsianCuisineFoods() {
+        return FoodCatalogService.getAvailableFoods('Asian');
     }
-    
-    public class FoodWithChefWrapper {
-        @AuraEnabled public Food__c food;
-        @AuraEnabled public String foodImageUrl;
-        @AuraEnabled public String chefImageUrl;
+
+    // Home page carousel: name, cuisine and public image of available foods only
+    @AuraEnabled(cacheable=true)
+    public static List<CarouselSlide> getCarouselFoods() {
+        List<CarouselSlide> slides = new List<CarouselSlide>();
+        for (Food__c food : [
+            SELECT Id, Name, Cuisine_Type__c, Image_URL__c
+            FROM Food__c
+            WHERE Available__c = true AND Chef__r.Available__c = true AND Image_URL__c != null
+            WITH USER_MODE
+            ORDER BY Name
+            LIMIT 12
+        ]) {
+            CarouselSlide slide = new CarouselSlide();
+            slide.id = food.Id;
+            slide.name = food.Name;
+            slide.cuisine = food.Cuisine_Type__c;
+            slide.imageUrl = food.Image_URL__c;
+            slides.add(slide);
+        }
+        return slides;
+    }
+
+    public class CarouselSlide {
+        @AuraEnabled public Id id;
+        @AuraEnabled public String name;
+        @AuraEnabled public String cuisine;
+        @AuraEnabled public String imageUrl;
     }
 }

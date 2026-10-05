@@ -1,61 +1,72 @@
 <template>
 
-    <template lwc:if={chefRecorId}>
+    <template lwc:if={chef}>
         <lightning-card class="container">
             <div class="slds-var-m-around_medium">
                 <!--Chef image-->
                 <div class="slds-var-m-around_small">
-                    <img src={chefImage} alt="Chef Image" class="image"/>
+                    <template lwc:if={chefImage}>
+                        <img src={chefImage} alt="Chef Image" class="image"/>
+                    </template>
                     <header>
-                        <h2 class="slds-var-m-around_small chefName">{chefName}</h2>
+                        <h2 class="slds-var-m-around_small chefName">{chef.Name__c}</h2>
                     </header>
                     <p class="slds-align_absolute-center">
                         <span style="font-size:175%;color:yellow;">&starf;</span>
-                        {chefRate}
-                    </p>            
+                        {chef.AvgRate__c}
+                    </p>
                 </div>
-                <div>
-                    <lightning-record-view-form
-                        object-api-name={objectName}
-                        record-id={chefRecorId}
-                        onload={handleRecordLoaded}
-                        density="compact">
-
-                        <!--display record details-->
-                        <section>
-                            <!-- <lightning-output-field field-name={fields.name}></lightning-output-field> -->
-                            <!-- <lightning-output-field field-name={fields.rate}></lightning-output-field> -->
-                            <lightning-output-field field-name={fields.bio}></lightning-output-field>
-                            <lightning-output-field field-name={fields.zip}></lightning-output-field>
-                            <lightning-output-field field-name={fields.preference}></lightning-output-field>
-                        </section><br>
-                        <section>
-                            <div class="contact-info">Contact Information</div>
-                            <lightning-output-field field-name={fields.phone}></lightning-output-field>
-                            <lightning-output-field field-name={fields.email}></lightning-output-field>
-                            <lightning-output-field field-name={fields.scmedia}></lightning-output-field>
-                        </section>
-                    </lightning-record-view-form>
-                </div>
+                <dl class="slds-list_horizontal slds-wrap">
+                    <dt class="slds-item_label slds-text-color_weak">Cuisine:</dt>
+                    <dd class="slds-item_detail">{chef.Cuisine_Type__c}</dd>
+                    <dt class="slds-item_label slds-text-color_weak">Location:</dt>
+                    <dd class="slds-item_detail">{chef.City__c} {chef.State__c}</dd>
+                    <dt class="slds-item_label slds-text-color_weak">Pickup / Delivery:</dt>
+                    <dd class="slds-item_detail">{chef.Pickup_Delivery_Preference__c}</dd>
+                    <template lwc:if={chef.Social_Media_Links__c}>
+                        <dt class="slds-item_label slds-text-color_weak">Social Media:</dt>
+                        <dd class="slds-item_detail">
+                            <lightning-formatted-url value={chef.Social_Media_Links__c} target="_blank"></lightning-formatted-url>
+                        </dd>
+                    </template>
+                </dl>
+                <template lwc:if={chef.Bio__c}>
+                    <div class="contact-info">About the Chef</div>
+                    <lightning-formatted-rich-text value={chef.Bio__c}></lightning-formatted-rich-text>
+                </template>
 
                 <!-- Display related food images -->
                 <div class="contact-info">Chef's Dishes</div>
                 <div class="slds-var-m-around_medium">
-                    <template lwc:if={foodDetails}>
+                    <template lwc:if={hasFoods}>
                         <div class="food-details">
                             <template for:each={foodDetails} for:item="food">
                                 <div key={food.foodId} class="food-item">
-                                    <img src={food.url} alt={food.foodName} class="food-image"/>
+                                    <template lwc:if={food.imageUrl}>
+                                        <img src={food.imageUrl} alt={food.foodName} class="food-image"/>
+                                    </template>
                                     <div class="food-info">
                                         <div class="food-name">{food.foodName}</div>
-                                        <div class="food-price">${food.foodPrice}</div>
+                                        <div class="food-price">
+                                            <lightning-formatted-number value={food.foodPrice} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                        </div>
                                     </div>
                                 </div>
                             </template>
                         </div>
                     </template>
+                    <template lwc:else>
+                        <em>No dishes available right now.</em>
+                    </template>
                 </div>
-            </div>   
+            </div>
+        </lightning-card>
+    </template>
+    <template lwc:elseif={notFound}>
+        <lightning-card>
+            <div class="slds-var-m-around_medium">
+                <em>This chef is not available.</em>
+            </div>
         </lightning-card>
     </template>
     <template lwc:else>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Profile xmlns="http://soap.sforce.com/2006/04/metadata">
+    <custom>true</custom>
+    <description>Customers of the Food Marketing site. Object, field and Apex access comes from the Food_Marketing_Customer permission set.</description>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Chef__c.Email__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Chef__c.Phone__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <userLicense>Customer Community Plus</userLicense>
+</Profile>

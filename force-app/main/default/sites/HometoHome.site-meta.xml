@@ -24,7 +24,7 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
     <siteAdmin>gulcan.foodmarketing.dev@agentforce.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>gulkullu@changeforce.com</siteGuestRecordDefaultOwner>
+    <siteGuestRecordDefaultOwner>gulcan.foodmarketing.dev@agentforce.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <urlPathPrefix>hometohomevforcesite</urlPathPrefix>
 </CustomSite>

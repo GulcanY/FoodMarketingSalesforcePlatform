@@ -1,6 +1,6 @@
 .food-cards-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Arrange three columns */
+    grid-template-columns: repeat(auto-fill, minmax(max(min(100%, 220px), calc((100% - 40px) / 3)), 1fr)); /* at most three columns, one on phones */
     gap: 20px; /* Space between the cards */
     margin: 20px;
 }
@@ -198,4 +198,16 @@
 }
 .slds-modal__header, .slds-modal__footer {
     padding: 20px; /* Consistent padding in header and footer */
+}
+/* keep cards and images inside the screen on phones */
+@media only screen and (max-width: 600px) {
+    .food-card .food-image,
+    .custom-modal-size .food-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .custom-modal-size {
+        width: 95%;
+    }
 }

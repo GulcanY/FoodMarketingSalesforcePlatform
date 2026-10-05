@@ -60,7 +60,6 @@
         <members>chefTile</members>
         <members>chefTileList</members>
         <members>customSearchBar</members>
-        <members>customerRecord</members>
         <members>foodPage</members>
         <members>indianCuisineLWC</members>
         <members>italianCuisine</members>
@@ -69,7 +68,6 @@
         <members>mexicanCuisineLWC</members>
         <members>middleEasternCuisineLWC</members>
         <members>mostOrderedDishes</members>
-        <members>orderConfirmation</members>
         <members>sliderImageChild</members>
         <members>sliderImageParent</members>
         <members>topChefs</members>
@@ -82,12 +80,10 @@
         <members>Chef_Login_Screen</members>
         <members>Confirmation_email_to_chef</members>
         <members>Create_Food_Record</members>
-        <members>Customer_Login_Screen</members>
         <members>Delete_closed_carts</members>
         <members>Review_Entry_Table</members>
         <members>Updating_Cart_Item_Price</members>
         <members>Welcome_Home_Page</members>
-        <members>customer_lwc</members>
         <name>Flow</name>
     </types>
 

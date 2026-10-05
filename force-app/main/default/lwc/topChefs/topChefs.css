@@ -85,3 +85,15 @@
         grid-template-columns: repeat(2, 1fr); /* Arrange two columns on smaller screens */
     }
 }
+/* phones: one card per row, never wider than the screen */
+@media only screen and (max-width: 600px) {
+    .chef-cards-grid {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .chef-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}

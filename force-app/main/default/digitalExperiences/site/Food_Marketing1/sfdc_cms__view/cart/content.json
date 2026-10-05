@@ -1,0 +1,78 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Cart",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"1673a72c-0aec-4bb0-a074-9157cf534a8f\",\"columns\":[{\"UUID\":\"a6e701a3-3c56-4247-8d53-c66a03cf1364\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "definition": "c:cartView",
+                      "id": "a86fd779-421c-45a5-9f41-5d36ee2fce81",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "a6e701a3-3c56-4247-8d53-c66a03cf1364",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "1673a72c-0aec-4bb0-a074-9157cf534a8f",
+              "type": "component"
+            }
+          ],
+          "id": "d7404a84-93c1-4e37-b9aa-fe3e4db43b19",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Cart | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "131944c1-b0be-45f6-bcab-a3b15a2cfc68",
+              "type": "component"
+            }
+          ],
+          "id": "97d74084-24be-4d7d-84b9-a557ac8c8738",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "4143ec36-6462-4a11-9266-55cf1d140486",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-cart"
+  },
+  "urlName": "cart"
+}

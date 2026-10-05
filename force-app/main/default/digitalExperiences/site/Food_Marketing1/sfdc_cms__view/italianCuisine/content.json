@@ -1,0 +1,93 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Italian Cuisine",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"5839876d-24bb-442c-a319-6ac02259cff1\",\"columns\":[{\"UUID\":\"bef011a9-c2d5-4148-8587-b79b046cc8c3\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "definition": "c:cartButton",
+                      "id": "8cd9424b-7eec-4ff7-92e1-33a581827160",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<h1 style=\"font-size: 2rem; font-weight: 700; margin: 1rem 0;\">Italian Cuisine</h1>"
+                      },
+                      "definition": "community_builder:htmlEditor",
+                      "id": "aef405f1-dd55-4429-b121-6e5f24034793",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {},
+                      "definition": "c:italianCuisine",
+                      "id": "406f24d6-7a73-4d59-8315-d9cf10f042c4",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "bef011a9-c2d5-4148-8587-b79b046cc8c3",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "5839876d-24bb-442c-a319-6ac02259cff1",
+              "type": "component"
+            }
+          ],
+          "id": "038c1667-1e21-432a-a780-913234d64976",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Italian Cuisine | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "9f9765fd-43ce-4de4-828f-f21f64eed6f3",
+              "type": "component"
+            }
+          ],
+          "id": "f1f567d7-ed51-4c13-8d58-b789cda9cb94",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "d0fb6640-056c-42cc-b628-1e23b221cf17",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-italian-cuisine"
+  },
+  "urlName": "italian-cuisine"
+}

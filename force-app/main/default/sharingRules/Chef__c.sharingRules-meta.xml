@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Food_Marketing_Customers_Available_Chefs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shares available chefs (and their foods via master-detail) with logged-in Food Marketing customers.</description>
+        <label>Food Marketing Customers Available Chefs</label>
+        <sharedTo>
+            <allCustomerPortalUsers></allCustomerPortalUsers>
+        </sharedTo>
+        <criteriaItems>
+            <field>Available__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>Food_Marketing_Guest_Available_Chefs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Shares available chefs (and their foods via master-detail) with the Food Marketing site guest user.</description>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+        <label>Food Marketing Guest Available Chefs</label>
+        <sharedTo>
+            <guestUser>Food_Marketing</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Available__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+    </sharingGuestRules>
+</SharingRules>

@@ -1,93 +1,98 @@
 import { LightningElement, api, track, wire } from 'lwc';
 
-import CHEF_OBJECT from '@salesforce/schema/Chef__c';
-import NAME_FIELD from '@salesforce/schema/Chef__c.Name__c';
-import BIO_FIELD from '@salesforce/schema/Chef__c.Bio__c';
-import PHONE_FIELD from '@salesforce/schema/Chef__c.Phone__c';
-import EMAIL_FIELD from '@salesforce/schema/Chef__c.Email__c';
-import ZIPCODE_FIELD from '@salesforce/schema/Chef__c.Zip_Code__c';
-import PDPREFERENCES_FIELD from '@salesforce/schema/Chef__c.Pickup_Delivery_Preference__c';
-import SOCIALMEDIA_FIELD from '@salesforce/schema/Chef__c.Social_Media_Links__c';
-import RATE_FIELD from '@salesforce/schema/Chef__c.AvgRate__c';
+import getChefDetails from '@salesforce/apex/ChefDetailsController.getChefDetails';
 import relatedFiles from '@salesforce/apex/ChefCtrl.relatedFiles';
 import getRelatedFiles from '@salesforce/apex/ChefCtrl.getRelatedFiles';
 
 import CHEF_CHANNEL from '@salesforce/messageChannel/ChefChannel__c';
-import { APPLICATION_SCOPE, MessageContext, subscribe} from 'lightning/messageService';
+import { APPLICATION_SCOPE, MessageContext, subscribe, unsubscribe } from 'lightning/messageService';
 
+// Public chef profile. Data comes only from Apex methods that return
+// public fields (no email, phone or address).
 export default class ChefCard extends LightningElement {
 
-    @api chefRecorId;
+    chefId;
+    chef;
     error;
-    chefName;
-    chefRate;
     chefImage;
-    @track foodDetails;  // Track property to hold food images
+    @track foodDetails;
+    subscription;
 
-    objectName = CHEF_OBJECT;
-    fields = {
-        name:NAME_FIELD,
-        bio:BIO_FIELD,
-        phone:PHONE_FIELD,
-        email:EMAIL_FIELD,
-        zip:ZIPCODE_FIELD,
-        preference:PDPREFERENCES_FIELD,
-        scmedia:SOCIALMEDIA_FIELD,
-        rate:RATE_FIELD
+    // Set by a parent component or by the message channel
+    @api
+    get chefRecorId() {
+        return this.chefId;
+    }
+    set chefRecorId(value) {
+        this.chefId = value;
     }
 
-    @wire(relatedFiles, {chefImageId: '$chefRecorId'})
-    photoDetails({data, error}){
-        if(data){
-            this.chefImage = data;
-        }else if(error){
-            console.log('ERROR -----', JSON.stringify(error))
+    // Set by the Experience Cloud object page ({!recordId})
+    @api
+    get recordId() {
+        return this.chefId;
+    }
+    set recordId(value) {
+        if (value) {
+            this.chefId = value;
         }
     }
 
-    @wire(getRelatedFiles, { chefId: '$chefRecorId' })
+    @wire(getChefDetails, { recordId: '$chefId' })
+    wiredChef({ data, error }) {
+        if (data) {
+            this.chef = data;
+            this.error = undefined;
+        } else if (error) {
+            this.chef = undefined;
+            this.error = error;
+        }
+    }
+
+    @wire(relatedFiles, { chefImageId: '$chefId' })
+    photoDetails({ data, error }) {
+        if (data) {
+            this.chefImage = data;
+        } else if (error) {
+            console.log('ERROR -----', JSON.stringify(error));
+        }
+    }
+
+    @wire(getRelatedFiles, { chefId: '$chefId' })
     wiredFoodDetails({ error, data }) {
         if (data) {
-            this.foodDetails = data.map(food => {
-                return {
-                    ...food,
-                    url: `/sfc/servlet.shepherd/version/download/${food.latestPublishedVersionId}`
-                };
-            });
+            this.foodDetails = data;
         } else if (error) {
             this.error = error;
         }
     }
-    
 
     @wire(MessageContext)
     context;
-    
 
-    connectedCallback(){
-        this.subscribeHandler();
-    };
-
-    subscribeHandler(){
-        subscribe(
+    connectedCallback() {
+        this.subscription = subscribe(
             this.context,
             CHEF_CHANNEL,
-            (message) => {this.handleMessage(message)},
-            {scope: APPLICATION_SCOPE}
+            (message) => { this.handleMessage(message); },
+            { scope: APPLICATION_SCOPE }
         );
     }
 
-    handleMessage(message){
-        console.log("Message receive: " + JSON.stringify(message));
-        this.chefRecorId = message.chefId;
+    disconnectedCallback() {
+        unsubscribe(this.subscription);
+        this.subscription = null;
     }
 
+    handleMessage(message) {
+        this.chefId = message.chefId;
+    }
 
-    
-    handleRecordLoaded(event){
-        const recordDetail = event.detail.records;
-        this.chefName = recordDetail[this.chefRecorId].fields.Name__c.value;
-        this.chefRate = recordDetail[this.chefRecorId].fields.AvgRate__c.value;
-        // this.chefImage = recordDetail[this.chefRecorId].fields.LinkedEntityId.value;
-    };
+    get hasFoods() {
+        return this.foodDetails && this.foodDetails.length > 0;
+    }
+
+    get notFound() {
+        return this.error && !this.chef;
+    }
 }

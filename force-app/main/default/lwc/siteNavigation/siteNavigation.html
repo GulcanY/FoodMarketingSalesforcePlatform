@@ -1,0 +1,17 @@
+<template>
+    <nav class="site-nav" aria-label="Main">
+        <a class="site-logo" href={homeHref} onclick={handleHomeClick}>
+            <img src={logoUrl} alt="Home2Home - Homemade Mediterranean, go to home page" class="site-logo-image" width="320" height="425" />
+        </a>
+        <a class="site-brand" href={homeHref} onclick={handleHomeClick} aria-label="home2home, go to home page">
+            <span class="brand-text">home2home</span>
+        </a>
+        <ul class="site-links">
+            <template for:each={items} for:item="item">
+                <li key={item.id}>
+                    <a href={item.href} data-href={item.href} data-internal={item.isInternal} onclick={handleClick}>{item.label}</a>
+                </li>
+            </template>
+        </ul>
+    </nav>
+</template>

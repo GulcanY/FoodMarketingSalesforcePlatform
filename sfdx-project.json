@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "01-Food-Marketing",
+  "name": "FoodMarketingSalesforcePlatform",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "67.0"

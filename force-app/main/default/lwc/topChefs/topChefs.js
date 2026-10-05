@@ -16,10 +16,10 @@ export default class TopChefs extends NavigationMixin(LightningElement) {// This
     navigateToChef(event) {
         const chefId = event.currentTarget.dataset.id;
         this[NavigationMixin.Navigate]({
-            type: 'lightning__RecordPage',
+            type: 'standard__recordPage',
             attributes: {
                 recordId: chefId,
-                objectApiName: 'Chef__c', // Replace with your actual object API name
+                objectApiName: 'Chef__c',
                 actionName: 'view'
             }
         });

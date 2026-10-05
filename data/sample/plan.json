@@ -1,0 +1,18 @@
+[
+  {
+    "sobject": "Chef__c",
+    "saveRefs": true,
+    "resolveRefs": false,
+    "files": [
+      "Chef__c.json"
+    ]
+  },
+  {
+    "sobject": "Food__c",
+    "saveRefs": false,
+    "resolveRefs": true,
+    "files": [
+      "Food__c.json"
+    ]
+  }
+]

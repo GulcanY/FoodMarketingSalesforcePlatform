@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "Italian Cuisine",
+  "contentBody": {
+    "activeViewId": "italianCuisine",
+    "configurationTags": [],
+    "pageAccess": "UseParent",
+    "routeType": "custom-italian-cuisine",
+    "urlPrefix": "italian-cuisine"
+  },
+  "urlName": "italian-cuisine"
+}

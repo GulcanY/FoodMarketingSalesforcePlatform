@@ -4,7 +4,7 @@
     <description>Include email  to facilitate communication between the platform and the chef.</description>
     <externalId>false</externalId>
     <label>Email</label>
-    <required>true</required>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Email</type>

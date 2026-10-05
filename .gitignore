@@ -46,3 +46,18 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+# Local org backups (contain org metadata and profiles) - kept out of the repo
+backups/
+
+# Credentials and org sessions
+*.key
+*.pem
+*.p12
+*.jks
+*.crt
+*credentials*
+*auth-url*
+*authurl*
+sfdxAuthUrl*
+.env.*

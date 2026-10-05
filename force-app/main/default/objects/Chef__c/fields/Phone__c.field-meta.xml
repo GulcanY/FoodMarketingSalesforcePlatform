@@ -4,7 +4,7 @@
     <description>Include phone fields to facilitate communication between the platform and the chef.</description>
     <externalId>false</externalId>
     <label>Phone</label>
-    <required>true</required>
+    <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Phone</type>

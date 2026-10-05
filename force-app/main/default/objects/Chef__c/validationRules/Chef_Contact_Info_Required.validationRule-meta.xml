@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chef_Contact_Info_Required</fullName>
+    <active>true</active>
+    <description>Replaces the field-level required flag on Email__c and Phone__c so these contact fields can be hidden from site guests and customers with field-level security.</description>
+    <errorConditionFormula>OR(ISBLANK(Email__c), ISBLANK(Phone__c))</errorConditionFormula>
+    <errorMessage>Email and Phone are required for a chef.</errorMessage>
+</ValidationRule>

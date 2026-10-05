@@ -1,0 +1,12 @@
+{
+  "type": "sfdc_cms__route",
+  "title": "American Cuisine",
+  "contentBody": {
+    "activeViewId": "americanCuisine",
+    "configurationTags": [],
+    "pageAccess": "UseParent",
+    "routeType": "custom-american-cuisine",
+    "urlPrefix": "american-cuisine"
+  },
+  "urlName": "american-cuisine"
+}

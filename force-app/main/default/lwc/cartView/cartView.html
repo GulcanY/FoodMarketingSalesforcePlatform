@@ -1,0 +1,75 @@
+<template>
+    <lightning-card title="Your Cart" icon-name="utility:cart">
+        <div class="slds-p-horizontal_medium">
+            <template lwc:if={isGuestUser}>
+                <p class="slds-m-bottom_small">Please log in to use your cart.</p>
+                <lightning-button label="Log in" variant="brand" onclick={handleLogin}></lightning-button>
+            </template>
+            <template lwc:elseif={isLoading}>
+                <lightning-spinner alternative-text="Loading cart" size="small"></lightning-spinner>
+            </template>
+            <template lwc:else>
+                <template lwc:if={errorMessage}>
+                    <p class="slds-text-color_error slds-m-bottom_small">{errorMessage}</p>
+                </template>
+                <template lwc:if={hasItems}>
+                    <ul class="cart-list">
+                        <template for:each={items} for:item="item">
+                            <li key={item.id} class="cart-row">
+                                <template lwc:if={item.imageUrl}>
+                                    <img src={item.imageUrl} alt={item.name} class="cart-image" />
+                                </template>
+                                <div class="cart-name">
+                                    <p class="slds-text-heading_small">{item.name}</p>
+                                    <lightning-formatted-number value={item.price} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                </div>
+                                <div class="cart-qty">
+                                    <lightning-button-icon icon-name="utility:dash" alternative-text="Decrease" data-id={item.id} onclick={handleDecrease}></lightning-button-icon>
+                                    <span class="qty-value">{item.quantity}</span>
+                                    <lightning-button-icon icon-name="utility:add" alternative-text="Increase" data-id={item.id} onclick={handleIncrease}></lightning-button-icon>
+                                </div>
+                                <lightning-formatted-number class="cart-line-total" value={item.lineTotal} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                <lightning-button-icon icon-name="utility:delete" alternative-text="Remove" data-id={item.id} onclick={handleRemove}></lightning-button-icon>
+                            </li>
+                        </template>
+                    </ul>
+                    <div class="cart-summary">
+                        <span>Items: {totalQuantity}</span>
+                        <span>Total: <lightning-formatted-number value={totalPrice} format-style="currency" currency-code="USD"></lightning-formatted-number></span>
+                    </div>
+
+                    <div class="checkout">
+                        <h2 class="slds-text-heading_small slds-m-bottom_x-small">Delivery details</h2>
+                        <p class="demo-note">Demo checkout: no payment is taken and no card details are collected.</p>
+                        <div class="checkout-grid">
+                            <lightning-input class="delivery-input" name="name" label="Full name" required max-length="120" value={delivery.name} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-input class="delivery-input" name="phone" type="tel" label="Phone" required max-length="40" value={delivery.phone} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-input class="delivery-input full" name="street" label="Street address" required max-length="255" value={delivery.street} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-input class="delivery-input" name="city" label="City" required max-length="80" value={delivery.city} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-input class="delivery-input" name="state" label="State" max-length="40" value={delivery.state} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-input class="delivery-input" name="zip" label="Zip code" required max-length="20" value={delivery.zip} onchange={handleDeliveryChange}></lightning-input>
+                            <lightning-textarea class="delivery-input full" name="notes" label="Delivery notes" max-length="255" value={delivery.notes} onchange={handleDeliveryChange}></lightning-textarea>
+                        </div>
+                        <lightning-button label="Place demo order" variant="brand" disabled={isPlacingOrder} onclick={handlePlaceOrder}></lightning-button>
+                    </div>
+                </template>
+                <template lwc:elseif={order}>
+                    <div class="order-confirmation">
+                        <h2 class="slds-text-heading_medium">Thank you! Order {order.orderNumber} was placed.</h2>
+                        <p class="demo-note">Status: {order.status}. This is a demo order; no payment was taken.</p>
+                        <ul class="slds-m-vertical_small">
+                            <template for:each={order.lines} for:item="line">
+                                <li key={line.name}>{line.quantity} × {line.name}</li>
+                            </template>
+                        </ul>
+                        <p>Total: <lightning-formatted-number value={order.totalAmount} format-style="currency" currency-code="USD"></lightning-formatted-number></p>
+                    </div>
+                </template>
+                <template lwc:else>
+                    <p class="slds-m-bottom_small">Your cart is empty.</p>
+                </template>
+                <lightning-button label="Continue shopping" onclick={handleContinueShopping}></lightning-button>
+            </template>
+        </div>
+    </lightning-card>
+</template>

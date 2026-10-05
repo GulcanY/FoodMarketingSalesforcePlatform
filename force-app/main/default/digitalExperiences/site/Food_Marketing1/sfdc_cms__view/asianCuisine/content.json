@@ -1,0 +1,93 @@
+{
+  "type": "sfdc_cms__view",
+  "title": "Asian Cuisine",
+  "contentBody": {
+    "component": {
+      "children": [
+        {
+          "children": [
+            {
+              "attributes": {
+                "backgroundImageConfig": "",
+                "backgroundImageOverlay": "rgba(0,0,0,0)",
+                "componentSpacerSize": "",
+                "layoutDirectionDesktop": "row",
+                "layoutDirectionMobile": "column",
+                "layoutDirectionTablet": "column",
+                "maxContentWidth": "",
+                "sectionColumnGutterWidth": "",
+                "sectionConfig": "{\"UUID\":\"8c7f8fdd-367b-48b6-b720-b3a606313465\",\"columns\":[{\"UUID\":\"25c70e8d-ee95-4885-8c0f-05a99ed6eb75\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+                "sectionMinHeight": "",
+                "sectionVerticalAlign": "flex-start"
+              },
+              "children": [
+                {
+                  "children": [
+                    {
+                      "attributes": {},
+                      "definition": "c:cartButton",
+                      "id": "295466c2-b1db-496f-bbe4-a09b893e9ac6",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {
+                        "imageInfos": "",
+                        "richTextValue": "<h1 style=\"font-size: 2rem; font-weight: 700; margin: 1rem 0;\">Asian Cuisine</h1>"
+                      },
+                      "definition": "community_builder:htmlEditor",
+                      "id": "6414b01b-107d-4c5f-a797-9adf4eb64613",
+                      "type": "component"
+                    },
+                    {
+                      "attributes": {},
+                      "definition": "c:foodPage",
+                      "id": "d0d7e86a-0322-4947-85f7-ff88a33ffc8c",
+                      "type": "component"
+                    }
+                  ],
+                  "id": "25c70e8d-ee95-4885-8c0f-05a99ed6eb75",
+                  "name": "col1",
+                  "title": "Column 1",
+                  "type": "region"
+                }
+              ],
+              "definition": "community_layout:section",
+              "id": "8c7f8fdd-367b-48b6-b720-b3a606313465",
+              "type": "component"
+            }
+          ],
+          "id": "1770d975-fe47-43d7-873f-6372616b8548",
+          "name": "content",
+          "title": "Content",
+          "type": "region"
+        },
+        {
+          "children": [
+            {
+              "attributes": {
+                "customHeadTags": "",
+                "description": "",
+                "pageTitle": "Asian Cuisine | home2home",
+                "recordId": "{!recordId}"
+              },
+              "definition": "community_builder:seoAssistant",
+              "id": "e2b0897e-87f9-4a82-9f4a-394e6f6ac9f6",
+              "type": "component"
+            }
+          ],
+          "id": "ff97ce2d-4f4e-46df-b21e-407edcdadf88",
+          "name": "sfdcHiddenRegion",
+          "title": "sfdcHiddenRegion",
+          "type": "region"
+        }
+      ],
+      "definition": "community_layout:sldsFlexibleLayout",
+      "id": "5a2732ad-64e4-49cd-9cf6-e4c27420bf9b",
+      "type": "component"
+    },
+    "dataProviders": [],
+    "themeLayoutType": "Inner",
+    "viewType": "custom-asian-cuisine"
+  },
+  "urlName": "asian-cuisine"
+}

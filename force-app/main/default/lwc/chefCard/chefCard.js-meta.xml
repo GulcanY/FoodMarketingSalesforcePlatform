@@ -7,4 +7,9 @@
         <target>lightningCommunity__Default</target>
         <target>lightningCommunity__Page</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+            <property name="recordId" type="String" label="Chef Record Id" default="{!recordId}"/>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
